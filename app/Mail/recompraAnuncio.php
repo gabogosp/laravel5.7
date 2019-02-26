@@ -26,7 +26,7 @@ class recompraAnuncio extends Mailable
     public function build()
     {
         return $this->view('emails.rebuy-mail')
-            ->from('info@nombreempresa.com', "NOMBRE EMPRESA")
+            ->from('rebuy@bembosex.com', "Recompra de anuncio")
             ->subject("Quieren volver activar un anuncio!!!! Referencia: ".$this->referencia. ", Tlf: " .$this->telefono."");
     }
 }

@@ -19,9 +19,9 @@ class nuevoAnuncio extends Mailable
     public $desc;
     public $img;
     public $referencia;
+    public $finalPrice;
 
-
-    public function __construct($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia)
+    public function __construct($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia, $finalPrice)
     {
        $this->tipo_publicidad = $tipo_publicidad;
        $this->titulo = $titulo;
@@ -33,12 +33,13 @@ class nuevoAnuncio extends Mailable
        $this->desc = $desc;
        $this->img = $img;
        $this->referencia = $referencia;
+       $this->finalPrice = $finalPrice;
     }
 
     public function build()
     {
         return $this->view('emails.nuevo-anuncio')
-            ->from('info@nombreempresa.com', "Formulario Web NOMBRE EMPRESA")
-            ->subject("Tú Nuevo anuncio aún no está disponible (en espera de pago)");
+            ->from('creation@bembosex.com', "Detalle de compra en bembosex.com")
+            ->subject("Gracias por tu compra, nuestro equipo se pondrá en contacto contigo");
     }
 }
